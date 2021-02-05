@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans0&family=Nanum+Gothic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns.center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* -- PAGE -- */
+
+.page {
+    max-width: 500px;
+    height: 100%;
+}
+
+.page .red {
+    color: rgb(190, 0, 41);
+}
+
+/* LOGO */
+
+.page .logo {
+    position: relative;
+    font-size: 25px;
+    width: 74px;
+    margin-bottom: 100px;
+}
+
+.page .logo .characters {
+    position: relative;
+    transition: transform .5s ease-in-out;
+    z-index: 1;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    border: transparent solid 1px;
+}
+
+.page .logo:hover {
+    cursor: pointer;
+}
+
+
+.page .logo .flag {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page .logo .circle {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* BOX */
+
+.scene {
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(68, 68, 68, 0.1);
+    perspective: 400px;
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 10s linear infinite;
+    -moz-animation: rotating 10s linear infinite;
+    -ms-animation: rotating 10s linear infinite;
+    -o-animation: rotating 10s linear infinite;
+    animation: rotating 10s linear infinite;
+}
+
+.scene:hover {
+    cursor: pointer;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform 5s;
+}
+
+.page #input-b:checked + .scene {
+    -webkit-animation: rotating 10s linear infinite;
+    -moz-animation: rotating 10s linear infinite;
+    -ms-animation: rotating 10s linear infinite;
+    -o-animation: rotating 10s linear infinite;
+    animation: rotating 10s linear infinite;
+}
+
+.box.front  { transform: translateZ(-100px) rotateY(   0deg); }
+.box.right  { transform: translateZ(-100px) rotateY( -90deg); }
+.box.back   { transform: translateZ(-100px) rotateY(-180deg); }
+.box.left   { transform: translateZ(-100px) rotateY(  90deg); }
+.box.top    { transform: translateZ(-100px) rotateX( -90deg); }
+.box.bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(68, 68, 68, 0.1);
+    line-height: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgba(250, 250, 250, 0.32);
+}
+
+.face.front  { transform: rotateY(  0deg) translateZ(100px); }
+.face.right  { transform: rotateY( 90deg) translateZ(100px); }
+.face.back   { transform: rotateY(180deg) translateZ(100px); }
+.face.left   { transform: rotateY(-90deg) translateZ(100px); }
+.face.top    { transform: rotateX( 90deg) translateZ(100px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+.page #input-l {
+    display: none;
+}
+
+.page #input-b {
+    display: none;
+}
+
+
+.page #input-b:checked + .scene .face.front {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.page #input-b:checked + .scene .face.right {
+    background-color: rgba(0, 136, 255, 0.2);
+}
+
+.page #input-b:checked + .scene .face.back {
+    background-color: rgba(8, 255, 0, 0.2);
+}
+
+.page #input-b:checked + .scene .face.left {
+    background-color: rgba(250, 88, 0, 0.2);
+}
+
+.page #input-b:checked + .scene .face.top {
+    background-color: rgba(98, 0, 255, 0.2);
+}
+
+.page #input-b:checked + .scene .face.bottom {
+    background-color: rgba(255, 0, 242, 0.2);
+}
+
+
+/*
+.page #input-b:checked + .scene .face.left {
+    background-color: rgb(190, 0, 41);
+}
+
+.page #input-b:checked + .scene .face.right {
+    background-color: rgb(190, 0, 41);
+}
+
+.page #input-b:checked + .scene .face.top {
+    background-color: rgb(190, 0, 41);
+}
+
+.page #input-b:checked + .scene .face.bottom {
+    background-color: rgb(190, 0, 41);
+}
+
+.page #input-b:checked + .scene .face.back {
+    background-color: transparent;
+}
+
+.page #input-b:checked + .scene .face.front {
+    background-color: transparent;
+}
+
+.page #input-b:checked + .scene .face {
+    background-color: rgb(190, 0, 41);
+}
+
+.page #input-b:checked + .scene .face {
+    background-color: rgba(190, 0, 41, 0.5);
+    border-color:  rgba(190, 0, 41, 1);
+}
+
+.page #input-b:checked + .scene .box {
+
+}
+
+
+
+
+*/
+
+
+
+.page #input-l:checked + .logo .circle {
+    background-color: rgb(190, 0, 41);
+    width: 10px;
+    height: 10px;
+}
+
+.page #input-l:checked + .logo > .characters p {
+
+}
+
+.page #input-l:checked + .logo > .characters {
+    border: #333 solid 1px;
+}
+
+
+
+.logo + p {
+    margin-top: 6px;
+}
+
+.links span,
+.links a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.links span {
+    color: #999;
+}
+
+span.dot::after {
+    content: ' • ';
+}
+
+.page .links {
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.banner img {
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 300px;
+}
+
+
+/* COLORS */
+
+.page h1 {
+    margin-bottom: 80px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+
+.page p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+}
+
+.page .info {
+    font-size: 14px;
+    color: #999;
+}
+
+.links a {
+    margin: 0 9px;
+    color: #777;
+    text-decoration: none;
+    border-bottom: 1px dashed #ccc;
+}
+
+.links a:hover {
+    color: #333;
+    border-bottom-color: transparent;
+}
+
+.button {
+    border: 1px solid #333;
+    color: #333;
+    padding: 5px 10px;
+
+    text-transform: uppercase;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    text-decoration: underline;
+}
+
+.article h3 {
+    text-transform: uppercase;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mail {
+    margin-top: 80px;
+}
+
+.content {
+    text-align: center;
+    line-height: 1.8;
+}
