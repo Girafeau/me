@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function Cube({active}) {
 
+    /*
     const [face, change] = useState('bottom');
     const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
     useEffect(() => {
@@ -10,10 +11,12 @@ export default function Cube({active}) {
         return () => clearInterval(interval);
     }, []);
 
+     */
+
     return (<React.Fragment>
             <input type="checkbox" id="input-b" defaultChecked={active}/>
             <label htmlFor="input-b" className="scene" id="label-b">
-                <div className={`box ${face}`}>
+                <div className={`box ${2}`}>
                     <div className="face front"></div>
                     <div className="face back"></div>
                     <div className="face right"></div>
