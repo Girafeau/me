@@ -22,7 +22,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .columns {
@@ -39,7 +38,6 @@ main {
 
 .page {
     max-width: 500px;
-    height: 100%;
 }
 
 .page .red {
@@ -53,6 +51,7 @@ main {
     font-size: 25px;
     width: 74px;
     margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 .page .logo .characters {
@@ -115,10 +114,10 @@ main {
 
 @keyframes diagonal {
     from {
-        transform: translateZ(-100px) rotate3d(-2,1, 0, 0deg);
+        transform: translateZ(-100px) rotateY(0deg);
     }
     to {
-        transform: translateZ(-100px) rotate3d(-2,1, 0, 360deg);
+        transform: translateZ(-100px) rotateY(360deg);
     }
 }
 
@@ -255,8 +254,6 @@ main {
     border: #333 solid 1px;
 }
 
-
-
 .logo + p {
     margin-top: 6px;
 }
@@ -292,7 +289,6 @@ span.dot::after {
     height: 300px;
 }
 
-
 /* COLORS */
 
 .page h1 {
@@ -314,6 +310,7 @@ span.dot::after {
 .page .info {
     font-size: 14px;
     color: #999;
+    margin-bottom: 100px;
 }
 
 .links a {
@@ -344,18 +341,62 @@ span.dot::after {
     text-decoration: underline;
 }
 
-.article h3 {
-    text-transform: uppercase;
-    color: #333;
-    font-size: 14px;
-    font-weight: bold;
-}
-
 .mail {
     margin-top: 80px;
 }
 
 .content {
-    text-align: center;
+
     line-height: 1.8;
+}
+
+/* NEWS */
+
+.article .head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.article .date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.article h3 {
+    text-transform: uppercase;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article img {
+    object-fit: cover;
+    width: 900px;
+    height: 540px;
+}
+
+.article .content {
+    margin-top: 10px;
+    text-align: left;
+}
+
+hr {
+    border: 1px inset rgba(255, 255, 255, 0.6);
+    margin: 40px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .article img {
+        width: 720px;
+        height: 432px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .article img {
+        width: 576px;
+        height: 346px;
+    }
 }

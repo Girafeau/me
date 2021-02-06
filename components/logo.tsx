@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Logo({active}) {
 
-    return (<React.Fragment>
+    return (
+        <React.Fragment>
             <input type="checkbox" id="input-l" defaultChecked={active}/>
             <label htmlFor="input-l" className="logo" id="label-l">
                 <div className="characters">
@@ -13,6 +14,6 @@ export default function Logo({active}) {
                     <span className="circle"></span>
                 </div>
             </label>
-    </React.Fragment>
+        </React.Fragment>
     );
 }
