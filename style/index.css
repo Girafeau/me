@@ -112,7 +112,7 @@ main {
     }
 }
 
-@keyframes diagonal {
+@keyframes rotating-3d {
     from {
         transform: translateZ(-100px) rotateY(0deg);
     }
@@ -132,11 +132,11 @@ main {
     transform-style: preserve-3d;
     transform: translateZ(-100px);
     transition: transform 5s;
-    animation: diagonal 5s linear infinite;
+    animation: rotating-3d 5s linear infinite;
 }
 
 .page #input-b:checked + .scene {
-
+    animation: rotating 10s linear infinite;
 }
 
 .box.front  { transform: translateZ(-100px) rotateY(   0deg); }
@@ -346,7 +346,7 @@ span.dot::after {
 }
 
 .content {
-
+    text-align: center;
     line-height: 1.8;
 }
 
@@ -377,7 +377,7 @@ span.dot::after {
     height: 540px;
 }
 
-.article .content {
+.article .description {
     margin-top: 10px;
     text-align: left;
 }

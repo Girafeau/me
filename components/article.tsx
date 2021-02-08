@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Article({title, date, image, content}) {
+export default function Article({title, date, image, description}) {
 
     return (
         <div className="article">
@@ -13,7 +13,7 @@ export default function Article({title, date, image, content}) {
             <div className="image">
                 <img src={image}/>
             </div>
-            <p className="content">{content}</p>
+            <p className="description">{description}</p>
         </div>
     );
 }

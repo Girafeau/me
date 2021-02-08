@@ -2,8 +2,9 @@ import React from "react";
 import Logo from "../components/logo.tsx";
 import Footer from "../components/footer.tsx";
 import Mail from "../components/mail.tsx";
+import Banner from "../components/banner.tsx";
 
-export default function Info() {
+export default function Contact() {
 
     return (
         <React.Fragment>
@@ -21,8 +22,6 @@ export default function Info() {
                     <span>french</span>
                     <span className="dot"></span>
                     <span>pianist</span>
-                    <span className="dot"></span>
-                    <span>and more...</span>
                 </div>
                 <Mail/>
                 <p className="links">

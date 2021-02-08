@@ -11,12 +11,11 @@ export default function Home() {
             <h1>It's nice to see you there.</h1>
             <Cube active={false}/>
             <p className="links">
-                <a href="/info">info</a>
+                <a href="/contact">contact</a>
                 <span className="dot"></span>
                 <a href="/blog">blog</a>
-                <span className="dot"></span>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">source code</a>
             </p>
+
             <Footer/>
         </section>
     );
