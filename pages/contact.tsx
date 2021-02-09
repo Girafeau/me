@@ -3,6 +3,7 @@ import Logo from "../components/logo.tsx";
 import Footer from "../components/footer.tsx";
 import Mail from "../components/mail.tsx";
 import Banner from "../components/banner.tsx";
+import Nav from "../components/nav.tsx";
 
 export default function Contact() {
 
@@ -24,11 +25,7 @@ export default function Contact() {
                     <span>pianist</span>
                 </div>
                 <Mail/>
-                <p className="links">
-                    <a href="/">home</a>
-                    <span className="dot"></span>
-                    <a href="/blog">blog</a>
-                </p>
+                <Nav/>
                 <Footer/>
             </section>
         </React.Fragment>

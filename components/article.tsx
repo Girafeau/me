@@ -1,6 +1,14 @@
 import React from "react";
 
-export default function Article({title, date, image, description}) {
+export default function Article({title, date, image, video, description}) {
+
+    let content = <div></div>;
+    if(image) {
+        content = <Image source={image}/>;
+    }
+    if(video) {
+        content = <Video source={video}/>;
+    }
 
     return (
         <div className="article">
@@ -10,10 +18,26 @@ export default function Article({title, date, image, description}) {
                     {date}
                 </p>
             </div>
-            <div className="image">
-                <img src={image}/>
-            </div>
+
+            {content}
+
             <p className="description">{description}</p>
         </div>
     );
+}
+
+
+function Image({source}) {
+    return (<div className="image">
+        <img src={source}/>
+    </div>);
+}
+
+function Video({source}) {
+    return (<div className="video">
+        <video controls>
+            <source src={source} type="video/mp4"/>
+            Video format not supported by your browser.
+        </video>
+    </div>);
 }

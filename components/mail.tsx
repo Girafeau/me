@@ -6,7 +6,7 @@ export default function Mail() {
 
     return (
         <div className="mail">
-            <form action={`mailto:${mail}`}>
+            <form target="_top" action={`mailto:${mail}`}>
                 <button type="submit" className="button"> Contact me</button>
             </form>
         </div>

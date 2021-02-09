@@ -99,7 +99,7 @@ main {
 .scene {
     width: 200px;
     height: 200px;
-    border: 1px solid rgba(68, 68, 68, 0.1);
+    border: 1px dashed rgba(68, 68, 68, 0.1);
     perspective: 400px;
 }
 
@@ -377,6 +377,12 @@ span.dot::after {
     height: 540px;
 }
 
+.article video {
+    object-fit: cover;
+    width: 900px;
+    height: 540px;
+}
+
 .article .description {
     margin-top: 10px;
     text-align: left;
@@ -392,10 +398,20 @@ hr {
         width: 720px;
         height: 432px;
     }
+
+    .article video {
+        width: 720px;
+        height: 432px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .article img {
+        width: 576px;
+        height: 346px;
+    }
+
+    .article video {
         width: 576px;
         height: 346px;
     }
