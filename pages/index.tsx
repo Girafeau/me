@@ -9,10 +9,9 @@ export default function Home() {
     return (
         <section className="page columns center">
             <Logo active={false}/>
-            <h1>It's nice to see you there.</h1>
-            <Cube active={false}/>
+            <h1>Hello there.</h1>
+            <Cube active={false} rotation={"horizontal"}/>
             <Nav/>
-
             <Footer/>
         </section>
     );
