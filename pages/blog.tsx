@@ -10,7 +10,9 @@ export default function Blog() {
         <React.Fragment>
             <section className="page columns center">
                 <Logo active={false}/>
-                <Article title="Commencement" date="08 febr. 2021" image="/banner.webp" description="..."/>
+                <Article title="Les Vosges" date="15 febr. 2021" image="/vosges.webp" description="A beautiful journey in France."/>
+                <hr/>
+                <Article title="Commencement" date="08 febr. 2021" image="/tournesol.webp" description="..."/>
                 <Nav/>
                 <Footer/>
             </section>

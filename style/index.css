@@ -401,6 +401,7 @@ span.dot::after {
 .article .description {
     margin-top: 10px;
     text-align: left;
+    font-size: 0.9em;
 }
 
 hr {
